@@ -10,7 +10,7 @@ O sistema tem como objetivo auxiliar o setor de Recursos Humanos no controle de 
 
 - Mariana — DBA (Administrador de banco de dados)
 - Guilherme — Backend Developer
-- Daniel — Frontend Developer 
+- Daniel — Frontend Developer
 
 ---
 
