@@ -105,38 +105,37 @@ Ajustar layout e responsividade da página [Daniel]
 
 -------
 Protótipos de Telas
-## Protótipo das Telas
 
 As telas abaixo representam o protótipo do Sistema de Ponto para RH, desenvolvido no Figma.
 
 ### 1. Tela de Login
 
-<img src="Login.png" alt="Tela de Login" width="700">
+<img src="TrabalhoEngSoft/Login.png" alt="Tela de Login" width="700">
 
 ### 2. Painel do Funcionário
 
-<img src="tela2.png" alt="Painel do Funcionário" width="700">
+<img src="TrabalhoEngSoft/tela2.png" alt="Painel do Funcionário" width="700">
 
 ### 3. Histórico de Pontos
 
-<img src="tela3.png" alt="Histórico de Pontos" width="700">
+<img src="TrabalhoEngSoft/tela3.png" alt="Histórico de Pontos" width="700">
 
 ### 4. Justificativa de Falta ou Atraso
 
-<img src="tela4.png" alt="Justificativa de Falta ou Atraso" width="700">
+<img src="TrabalhoEngSoft/tela4.png" alt="Justificativa de Falta ou Atraso" width="700">
 
 ### 5. Painel do RH
 
-<img src="tela5.png" alt="Painel do RH" width="700">
+<img src="TrabalhoEngSoft/tela5.png" alt="Painel do RH" width="700">
 
 ### 6. Cadastro de Funcionários
 
-<img src="tela6.png" alt="Cadastro de Funcionários" width="700">
+<img src="TrabalhoEngSoft/tela6.png" alt="Cadastro de Funcionários" width="700">
 
 ### 7. Registros de Ponto
 
-<img src="tela7.png" alt="Registros de Ponto" width="700">
+<img src="TrabalhoEngSoft/tela7.png" alt="Registros de Ponto" width="700">
 
 ### 8. Justificativas e Relatórios
 
-<img src="tela8.png" alt="Tela de Justificativas ou Relatórios" width="700">
+<img src="TrabalhoEngSoft/tela8.png" alt="Tela de Justificativas ou Relatórios" width="700">
