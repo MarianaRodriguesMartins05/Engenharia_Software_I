@@ -26,13 +26,13 @@ Versionamento: GitHub
 
 ## Backlog do Produto
 
-1. Como funcionário, eu gostaria de realizar login no sistema.
+1. Como funcionário, eu gostaria de realizar o login de colaborador no sistema.
 2. Como funcionário, eu gostaria de registrar meu horário de entrada e saída.
 3. Como funcionário, eu gostaria de visualizar meu histórico de pontos registrados.
 4. Como funcionário, eu gostaria de visualizar minhas horas trabalhadas no mês.
 5. Como funcionário, eu gostaria de justificar atrasos ou faltas.
-6. Como administrador (RH), eu gostaria de cadastrar funcionários no sistema.
-7. Como administrador (RH), eu gostaria de editar ou remover funcionários cadastrados.
+6. Como administrador (RH), eu gostaria de realizar o login de administrador/gestor no sistema.
+7. Como administrador (RH), eu gostaria de cadastrar, editar ou remover funcionários cadastrados.
 8. Como administrador (RH), eu gostaria de visualizar os registros de ponto de todos os funcionários.
 9. Como administrador (RH), eu gostaria de aprovar ou rejeitar justificativas de faltas e atrasos.
 10. Como administrador (RH), eu gostaria de gerar relatórios mensais de horas trabalhadas.  
@@ -41,7 +41,7 @@ Versionamento: GitHub
 
 ## Backlog da Sprint
 
-### História 1 — Como funcionário, eu gostaria de realizar login no sistema.
+### História 1 — Como funcionário, eu gostaria de realizar o login de colaborador no sistema.
 
 Tarefas e responsáveis:
 
@@ -66,7 +66,20 @@ Integrar frontend com backend do registro de ponto [Daniel, Guilherme e Mariana]
 
 ---
 
-### História 3 — Como administrador (RH), eu gostaria de cadastrar funcionários no sistema.
+### História 3 — Como administrador (RH), eu gostaria de realizar o login de administrador/gestor no sistema.
+
+Tarefas e responsáveis:
+
+Criar estrutura inicial do projeto com Node.js e Express [Guilherme]
+Configurar banco de dados MySQL [Mariana]
+Criar tabela de usuários no banco [Mariana]
+Desenvolver tela de login em HTML e CSS [Daniel]
+Implementar autenticação no backend [Guilherme]
+Integrar frontend com backend no login [Daniel, Guilherme e Mariana]
+
+---
+
+### História 4 — Como administrador (RH), eu gostaria de cadastrar funcionários no sistema.
 
 Tarefas e responsáveis:
 
@@ -79,7 +92,7 @@ Estilizar interface da área administrativa [Daniel]
 
 ---
 
-### História 4 — Como administrador (RH), eu gostaria de visualizar os registros de ponto dos funcionários.
+### História 5 — Como administrador (RH), eu gostaria de visualizar os registros de ponto dos funcionários.
 
 Tarefas e responsáveis:
 
