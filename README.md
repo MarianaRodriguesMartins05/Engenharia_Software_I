@@ -103,6 +103,11 @@ Adicionar filtro por data [Guilherme e Daniel]
 Integrar backend e frontend da listagem [Daniel, Guilherme e Mariana]
 Ajustar layout e responsividade da página [Daniel]
 
+----------
+Diagrama de Classes
+
+<img src="DiagramaClasses.png" alt="Diagrama de Classes" width="700">
+
 -------
 Protótipos de Telas
 
