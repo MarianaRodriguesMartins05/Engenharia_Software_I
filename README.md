@@ -103,6 +103,11 @@ Adicionar filtro por data [Guilherme e Daniel]
 Integrar backend e frontend da listagem [Daniel, Guilherme e Mariana]
 Ajustar layout e responsividade da página [Daniel]
 
+------
+Diagrama Casos de Uso
+
+<img src="DiagramaCasosUso.png" alt="Diagrama de Casos de Uso" width="700">
+
 ----------
 Diagrama de Classes
 
