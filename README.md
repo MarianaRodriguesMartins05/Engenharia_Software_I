@@ -115,9 +115,9 @@ Ajustar layout e responsividade da página [Daniel]
 
 ### 2. Diagramas de Atividade
 
-#### 1. Login de funcionário/colaborador
+#### 2.1. Login de funcionário/colaborador
 
-<img src="diagramasAtividades_part01/hu01.png" alt="Login de funcionário" width="700">
+<img src="diagramasAtividades_part01/hu01.PNG" alt="Login de funcionário" width="700">
 
 ---
 
