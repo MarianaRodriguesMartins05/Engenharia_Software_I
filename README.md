@@ -137,19 +137,19 @@ Ajustar layout e responsividade da página [Daniel]
 
 #### 2.6. Realizar Login
 
-<img src="diagramasAtividades_part02/Atividades06.PNG" alt="Realizar Login" width="700">
+<img src="diagramasAtividades_part02/Atividades06.png" alt="Realizar Login" width="700">
 
 #### 2.7. CRUD
 
-<img src="diagramasAtividades_part02/Atividades07.PNG" alt="CRUD" width="700">
+<img src="diagramasAtividades_part02/Atividades07.png" alt="CRUD" width="700">
 
 #### 2.8. Visualizar Registro de Ponto
 
-<img src="diagramasAtividades_part02/Atividades08.PNG" alt="Visualizar Registro de Ponto" width="700">
+<img src="diagramasAtividades_part02/Atividades08.png" alt="Visualizar Registro de Ponto" width="700">
 
 #### 2.9. Avaliar Justificativas
 
-<img src="diagramasAtividades_part02/Atividades09.PNG" alt="Avaliar Justificativas" width="700">
+<img src="diagramasAtividades_part02/Atividades09.png" alt="Avaliar Justificativas" width="700">
 
 ---
 
