@@ -151,6 +151,10 @@ Ajustar layout e responsividade da página [Daniel]
 
 <img src="diagramasAtividades_part02/Atividades09.png" alt="Avaliar Justificativas" width="700">
 
+#### 2.10. Relatório Mensal
+
+<img src="diagramasAtividades_part02/Atividades10.png" alt="Relatório Mensal" width="700">
+
 ---
 
 ### 3. Diagramas de Classes
