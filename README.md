@@ -103,18 +103,31 @@ Adicionar filtro por data [Guilherme e Daniel]
 Integrar backend e frontend da listagem [Daniel, Guilherme e Mariana]
 Ajustar layout e responsividade da página [Daniel]
 
-------
-Diagrama Casos de Uso
+---
+
+## Diagramas UML
+
+### 1. Diagramas de Casos de Uso
 
 <img src="DiagramaCasosUso.png" alt="Diagrama de Casos de Uso" width="700">
 
-----------
-Diagrama de Classes
+---
+
+### 2. Diagramas de Atividade
+
+#### 1. Login de funcionário/colaborador
+
+<img src="diagramasAtividades_part01/hu01.png" alt="Login de funcionário" width="700">
+
+---
+
+### 3. Diagramas de Classes
 
 <img src="DiagramaClasses.png" alt="Diagrama de Classes" width="700">
 
 -------
-Protótipos de Telas
+
+## Protótipos de Telas
 
 As telas abaixo representam o protótipo do Sistema de Ponto para RH, desenvolvido no Figma.
 
