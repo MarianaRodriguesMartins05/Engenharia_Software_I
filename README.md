@@ -119,6 +119,22 @@ Ajustar layout e responsividade da página [Daniel]
 
 <img src="diagramasAtividades_part01/hu01.PNG" alt="Login de funcionário" width="700">
 
+#### 2.2. Registro de ponto
+
+<img src="diagramasAtividades_part01/hu02.PNG" alt="Registro de ponto" width="700">
+
+#### 2.3. Histórico de ponto
+
+<img src="diagramasAtividades_part01/hu03.PNG" alt="Histórico de ponto" width="700">
+
+#### 2.4. Visualizar horas trabalhadas
+
+<img src="diagramasAtividades_part01/hu04.PNG" alt="Visualizar horas trabalhadas" width="700">
+
+#### 2.5. Justificar atrasos e faltas
+
+<img src="diagramasAtividades_part01/hu05.PNG" alt="Justificar atrasos e faltas" width="700">
+
 ---
 
 ### 3. Diagramas de Classes
