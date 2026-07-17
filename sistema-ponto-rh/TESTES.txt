@@ -1,0 +1,107 @@
+C:\Users\Guilherme\Desktop\Projetos\sistema-ponto-rh\backend>npm run dev
+
+1. Login no sistema:
+-> POST http://localhost:3000/auth/login
+-> Authorization: No auth
+-> Body: raw JSON
+Login de funcionário:
+{
+    "email": "joao@empresa.com",
+    "senha": "123456"
+}
+Login do RH:
+{
+    "email":"admin@empresa.com",
+    "senha":"123456"
+}
+-> Send.
+-> Copiar token para testes futuros.
+-----------------------------------------------------------
+2. Consultar autenticação do usuário:
+-> GET http://localhost:3000/users/me
+-> Authorization: Bearer Token (colar o token)
+-> Body: none
+-> Send.
+-----------------------------------------------------------
+3. Registrar ponto:
+-> POST http://localhost:3000/time-records
+-> Authorization: Bearer Token (colar o token)
+-> Body: none
+-> Send.
+-----------------------------------------------------------
+4. Registre outro ponto (saída).
+-----------------------------------------------------------
+5. Consultar histórico:
+-> GET http://localhost:3000/time-records/history
+-> Authorization: Bearer Token (colar o token)
+-> Body: none
+-> Send.
+-----------------------------------------------------------
+6. Teste sem autenticação:
+-> GET http://localhost:3000/time-records/history
+-> Authorization: No auth
+-> Body: none
+-> Send.
+-----------------------------------------------------------
+7. Token inválido:
+-> GET http://localhost:3000/time-records/history
+-> Authorization: Bearer Token (digitar qualquer coisa)
+-> Body: none
+-> Send.
+-----------------------------------------------------------
+8. Teste acesso ao painel do RH: (faça o login como funcionário e como RH). Depois de logado, copiar token e testar.
+-> GET http://localhost:3000/admin/dashboard
+-> Authorization: Bearer Token (colar o token)
+-> Body: none
+-> Send.
+-----------------------------------------------------------
+9. Teste de cadastro de funcionário:
+-> POST http://localhost:3000/auth/login
+-> Authorization: No auth
+-> Body: raw JSON
+{
+    "email":"admin@empresa.com",
+    "senha":"123456"
+}
+-> Send.
+-> Copiar token.
+
+-> POST http://localhost:3000/employees
+-> Authorization: Bearer Token (colar o token)
+-> Body: raw JSON
+{
+    "nome":"Maria Oliveira",
+    "email":"maria@empresa.com",
+    "senha":"123456"
+}
+-----------------------------------------------------------
+10. Listar funcionários:
+-> GET http://localhost:3000/employees
+-> Authorization: Bearer Token (colar o token de RH)
+-> Body: none
+-----------------------------------------------------------
+11. Buscar funcionário pelo ID:
+-> GET http://localhost:3000/employees/(ID)
+-> Authorization: Bearer Token (colar o token de RH)
+-> Body: none
+-----------------------------------------------------------
+12. Atualizar funcionário pelo ID:
+-> PUT http://localhost:3000/employees/(ID)
+-> Authorization: Bearer Token (colar o token de RH)
+-> Body: raw JSON
+{
+    "nome":"Maria Souza",
+    "email":"maria.souza@empresa.com"
+}
+-----------------------------------------------------------
+13. Deletar funcionário:
+-> DELETE http://localhost:3000/employees/(ID)
+-> Authorization: Bearer Token (colar o token de RH)
+-> Body: none
+-----------------------------------------------------------
+14. Listar todos os registros: faça login como RH e copie o token.
+-> GET http://localhost:3000/time-records/all
+-----------------------------------------------------------
+15. Listar por data:
+-> GET http://localhost:3000/time-records/all?date=16/07/2026
+-----------------------------------------------------------
