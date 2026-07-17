@@ -109,7 +109,7 @@ Ajustar layout e responsividade da página [Daniel]
 
 ### 1. Diagramas de Casos de Uso
 
-<img src="DiagramaCasosUso.png" alt="Diagrama de Casos de Uso" width="700">
+<img src="imagens/DiagramaCasosUso.png" alt="Diagrama de Casos de Uso" width="700">
 
 ---
 
@@ -117,49 +117,49 @@ Ajustar layout e responsividade da página [Daniel]
 
 #### 2.1. Login de funcionário/colaborador
 
-<img src="diagramasAtividades_part01/hu01.PNG" alt="Login de funcionário" width="700">
+<img src="imagens/diagramasAtividades_part01/hu01.PNG" alt="Login de funcionário" width="700">
 
 #### 2.2. Registro de ponto
 
-<img src="diagramasAtividades_part01/hu02.PNG" alt="Registro de ponto" width="700">
+<img src="imagens/diagramasAtividades_part01/hu02.PNG" alt="Registro de ponto" width="700">
 
 #### 2.3. Histórico de ponto
 
-<img src="diagramasAtividades_part01/hu03.PNG" alt="Histórico de ponto" width="700">
+<img src="imagens/diagramasAtividades_part01/hu03.PNG" alt="Histórico de ponto" width="700">
 
 #### 2.4. Visualizar horas trabalhadas
 
-<img src="diagramasAtividades_part01/hu04.PNG" alt="Visualizar horas trabalhadas" width="700">
+<img src="imagens/diagramasAtividades_part01/hu04.PNG" alt="Visualizar horas trabalhadas" width="700">
 
 #### 2.5. Justificar atrasos e faltas
 
-<img src="diagramasAtividades_part01/hu05.PNG" alt="Justificar atrasos e faltas" width="700">
+<img src="imagens/diagramasAtividades_part01/hu05.PNG" alt="Justificar atrasos e faltas" width="700">
 
 #### 2.6. Realizar Login
 
-<img src="diagramasAtividades_part02/Atividades06.png" alt="Realizar Login" width="700">
+<img src="imagens/diagramasAtividades_part02/Atividades06.png" alt="Realizar Login" width="700">
 
 #### 2.7. CRUD
 
-<img src="diagramasAtividades_part02/Atividades07.png" alt="CRUD" width="700">
+<img src="imagens/diagramasAtividades_part02/Atividades07.png" alt="CRUD" width="700">
 
 #### 2.8. Visualizar Registro de Ponto
 
-<img src="diagramasAtividades_part02/Atividades08.png" alt="Visualizar Registro de Ponto" width="700">
+<img src="imagens/diagramasAtividades_part02/Atividades08.png" alt="Visualizar Registro de Ponto" width="700">
 
 #### 2.9. Avaliar Justificativas
 
-<img src="diagramasAtividades_part02/Atividades09.png" alt="Avaliar Justificativas" width="700">
+<img src="imagens/diagramasAtividades_part02/Atividades09.png" alt="Avaliar Justificativas" width="700">
 
 #### 2.10. Relatório Mensal
 
-<img src="diagramasAtividades_part02/Atividades10.png" alt="Relatório Mensal" width="700">
+<img src="imagens/diagramasAtividades_part02/Atividades10.png" alt="Relatório Mensal" width="700">
 
 ---
 
 ### 3. Diagramas de Classes
 
-<img src="DiagramaClasses.png" alt="Diagrama de Classes" width="700">
+<img src="imagens/DiagramaClasses.png" alt="Diagrama de Classes" width="700">
 
 -------
 
@@ -169,32 +169,32 @@ As telas abaixo representam o protótipo do Sistema de Ponto para RH, desenvolvi
 
 ### 1. Tela de Login
 
-<img src="TrabalhoEngSoft/Login.png" alt="Tela de Login" width="700">
+<img src="imagens/TrabalhoEngSoft/Login.png" alt="Tela de Login" width="700">
 
 ### 2. Painel do Funcionário
 
-<img src="TrabalhoEngSoft/tela2.png" alt="Painel do Funcionário" width="700">
+<img src="imagens/TrabalhoEngSoft/tela2.png" alt="Painel do Funcionário" width="700">
 
 ### 3. Histórico de Pontos
 
-<img src="TrabalhoEngSoft/tela3.png" alt="Histórico de Pontos" width="700">
+<img src="imagens/TrabalhoEngSoft/tela3.png" alt="Histórico de Pontos" width="700">
 
 ### 4. Justificativa de Falta ou Atraso
 
-<img src="TrabalhoEngSoft/tela4.png" alt="Justificativa de Falta ou Atraso" width="700">
+<img src="imagens/TrabalhoEngSoft/tela4.png" alt="Justificativa de Falta ou Atraso" width="700">
 
 ### 5. Painel do RH
 
-<img src="TrabalhoEngSoft/tela5.png" alt="Painel do RH" width="700">
+<img src="imagens/TrabalhoEngSoft/tela5.png" alt="Painel do RH" width="700">
 
 ### 6. Cadastro de Funcionários
 
-<img src="TrabalhoEngSoft/tela6.png" alt="Cadastro de Funcionários" width="700">
+<img src="imagens/TrabalhoEngSoft/tela6.png" alt="Cadastro de Funcionários" width="700">
 
 ### 7. Registros de Ponto
 
-<img src="TrabalhoEngSoft/tela7.png" alt="Registros de Ponto" width="700">
+<img src="imagens/TrabalhoEngSoft/tela7.png" alt="Registros de Ponto" width="700">
 
 ### 8. Justificativas e Relatórios
 
-<img src="TrabalhoEngSoft/tela8.png" alt="Tela de Justificativas ou Relatórios" width="700">
+<img src="imagens/TrabalhoEngSoft/tela8.png" alt="Tela de Justificativas ou Relatórios" width="700">
