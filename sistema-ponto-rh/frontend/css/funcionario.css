@@ -1,0 +1,207 @@
+body {
+    background-color: #f3f4f6;
+}
+
+.cabecalho {
+    height: 64px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #24449a;
+    color: white;
+}
+
+.logo {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.usuario-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.botao-sair {
+    padding: 9px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3978e8;
+    color: white;
+    font-weight: bold;
+}
+
+.botao-sair:hover {
+    background-color: #2b62c5;
+}
+
+.conteudo {
+    width: min(1100px, calc(100% - 40px));
+    margin: 35px auto;
+}
+
+.titulo-pagina {
+    margin-bottom: 25px;
+}
+
+.titulo-pagina h1 {
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+.titulo-pagina p {
+    color: #6b7280;
+}
+
+.card {
+    padding: 30px;
+    margin-bottom: 26px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+}
+
+.informacoes-ponto {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.informacao h2 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.informacao strong {
+    font-size: 22px;
+    color: #24449a;
+}
+
+#ultimo-registro {
+    font-size: 15px;
+    color: #4b5563;
+}
+
+.acoes-ponto {
+    display: flex;
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.botao {
+    min-width: 180px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+}
+
+.botao-entrada {
+    background-color: #19a84b;
+}
+
+.botao-entrada:hover {
+    background-color: #14853c;
+}
+
+.botao-saida {
+    background-color: #2864e8;
+}
+
+.botao-saida:hover {
+    background-color: #1e4fc0;
+}
+
+.botao:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.mensagem {
+    min-height: 22px;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.mensagem-sucesso {
+    color: #15803d;
+}
+
+.mensagem-erro {
+    color: #b91c1c;
+}
+
+.cards-resumo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.card-resumo {
+    padding: 25px;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+}
+
+.card-resumo h2 {
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.card-resumo strong {
+    font-size: 26px;
+    color: #24449a;
+}
+
+.card-resumo .em-breve {
+    font-size: 15px;
+    color: #9ca3af;
+}
+
+.acoes-secundarias {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.botao-secundario {
+    padding: 12px 24px;
+    border: none;
+    background-color: #24449a;
+    color: white;
+    font-weight: bold;
+}
+
+.botao-secundario:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+@media (max-width: 760px) {
+    .cabecalho {
+        padding: 0 18px;
+    }
+
+    #nome-usuario {
+        display: none;
+    }
+
+    .informacoes-ponto,
+    .cards-resumo {
+        grid-template-columns: 1fr;
+    }
+
+    .acoes-ponto,
+    .acoes-secundarias {
+        flex-direction: column;
+    }
+
+    .botao,
+    .botao-secundario {
+        width: 100%;
+    }
+}
