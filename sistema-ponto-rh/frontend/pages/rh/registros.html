@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Registros de Ponto | Sistema de Ponto RH</title>
+
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/rh.css">
+</head>
+
+<body>
+    <div class="layout-rh">
+        <aside class="menu-lateral">
+            <div class="marca-rh">
+                <h1>Sistema de Ponto RH</h1>
+                <p>Área Administrativa</p>
+            </div>
+
+            <nav class="menu-navegacao">
+                <a
+                    href="./dashboard.html"
+                    class="link-menu"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="./funcionarios.html"
+                    class="link-menu"
+                >
+                    Funcionários
+                </a>
+
+                <a
+                    href="./registros.html"
+                    class="link-menu ativo"
+                >
+                    Registros de Ponto
+                </a>
+
+                <span class="link-menu desabilitado">
+                    Justificativas
+                </span>
+
+                <span class="link-menu desabilitado">
+                    Relatórios
+                </span>
+            </nav>
+
+            <button
+                id="botao-sair"
+                class="botao-sair-menu"
+                type="button"
+            >
+                Sair
+            </button>
+        </aside>
+
+        <main class="conteudo-rh">
+            <header class="cabecalho-pagina">
+                <div class="titulo-pagina">
+                    <h2>Registros de Ponto</h2>
+
+                    <p>
+                        Consulte as marcações realizadas pelos funcionários.
+                    </p>
+                </div>
+
+                <div class="usuario-rh">
+                    <span class="avatar-rh">RH</span>
+                    <span id="nome-usuario">Administrador RH</span>
+                </div>
+            </header>
+
+            <section class="card-filtros">
+                <form id="form-filtro">
+                    <div class="grupo-filtro">
+                        <label for="data-filtro">
+                            Filtrar por data
+                        </label>
+
+                        <input
+                            type="date"
+                            id="data-filtro"
+                        >
+                    </div>
+
+                    <div class="acoes-filtro">
+                        <button
+                            class="botao-principal-rh"
+                            type="submit"
+                        >
+                            Filtrar
+                        </button>
+
+                        <button
+                            id="botao-limpar"
+                            class="botao-cancelar"
+                            type="button"
+                        >
+                            Limpar filtro
+                        </button>
+
+                        <button
+                            id="botao-atualizar-registros"
+                            class="botao-atualizar"
+                            type="button"
+                        >
+                            Atualizar
+                        </button>
+                    </div>
+                </form>
+
+                <p id="mensagem-registros" class="mensagem"></p>
+            </section>
+
+            <section class="card-listagem">
+                <div class="cabecalho-listagem">
+                    <div>
+                        <h2>Marcações encontradas</h2>
+
+                        <p id="quantidade-registros">
+                            0 registros
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tabela-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Funcionário</th>
+                                <th>Data</th>
+                                <th>Horário</th>
+                                <th>Tipo</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabela-registros">
+                            <tr>
+                                <td
+                                    colspan="4"
+                                    class="sem-registros"
+                                >
+                                    Carregando registros...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/registros.js"></script>
+</body>
+</html>

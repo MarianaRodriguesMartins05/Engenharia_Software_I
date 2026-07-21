@@ -1,0 +1,72 @@
+.pagina-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.card-login {
+    width: 100%;
+    max-width: 420px;
+    padding: 36px;
+    background-color: var(--cor-branca);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cabecalho-login {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.cabecalho-login h1 {
+    margin-bottom: 8px;
+    color: var(--cor-primaria);
+}
+
+.cabecalho-login p {
+    color: var(--cor-texto-secundario);
+}
+
+.grupo-campo {
+    margin-bottom: 18px;
+}
+
+.grupo-campo label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.grupo-campo input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    outline: none;
+}
+
+.grupo-campo input:focus {
+    border-color: var(--cor-primaria);
+}
+
+#botao-login {
+    width: 100%;
+    margin-top: 14px;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    font-weight: bold;
+}
+
+#botao-login:hover {
+    background-color: var(--cor-primaria-escura);
+}
+
+#botao-login:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Painel do Funcionário</title>
+
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/funcionario.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <span class="logo">Sistema de Ponto RH</span>
+
+        <div class="usuario-cabecalho">
+            <span id="nome-usuario"></span>
+
+            <button
+                id="botao-sair"
+                class="botao-sair"
+                type="button"
+            >
+                Sair
+            </button>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <section class="titulo-pagina">
+            <h1>Painel do Funcionário</h1>
+
+            <p>
+                Registre sua entrada, saída e acompanhe sua jornada de trabalho.
+            </p>
+        </section>
+
+        <section class="card">
+            <div class="informacoes-ponto">
+                <div class="informacao">
+                    <h2>Hoje</h2>
+                    <strong id="data-atual">--/--/----</strong>
+                </div>
+
+                <div class="informacao">
+                    <h2>Horário atual</h2>
+                    <strong id="horario-atual">00:00:00</strong>
+                </div>
+
+                <div class="informacao">
+                    <h2>Último registro</h2>
+
+                    <p id="ultimo-registro">
+                        Nenhum ponto registrado hoje.
+                    </p>
+                </div>
+            </div>
+
+            <div class="acoes-ponto">
+                <button
+                    id="botao-entrada"
+                    class="botao botao-entrada"
+                    type="button"
+                >
+                    Registrar entrada
+                </button>
+
+                <button
+                    id="botao-saida"
+                    class="botao botao-saida"
+                    type="button"
+                >
+                    Registrar saída
+                </button>
+            </div>
+
+            <p id="mensagem-ponto" class="mensagem"></p>
+        </section>
+
+        <section class="cards-resumo">
+            <article class="card-resumo">
+                <h2>Horas trabalhadas no mês</h2>
+                <strong class="em-breve">Em breve</strong>
+            </article>
+
+            <article class="card-resumo">
+                <h2>Atrasos no mês</h2>
+                <strong class="em-breve">Em breve</strong>
+            </article>
+
+            <article class="card-resumo">
+                <h2>Faltas no mês</h2>
+                <strong class="em-breve">Em breve</strong>
+            </article>
+        </section>
+
+        <section class="acoes-secundarias">
+            <button
+                class="botao-secundario"
+                type="button"
+                disabled
+                title="Funcionalidade de uma próxima sprint"
+            >
+                Ver histórico
+            </button>
+
+            <button
+                class="botao-secundario"
+                type="button"
+                disabled
+                title="Funcionalidade de uma próxima sprint"
+            >
+                Enviar justificativa
+            </button>
+        </section>
+    </main>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/ponto.js"></script>
+</body>
+</html>
