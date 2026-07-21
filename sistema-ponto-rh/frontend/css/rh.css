@@ -429,3 +429,75 @@ td {
         width: 100%;
     }
 }
+/* Página de registros de ponto */
+
+.card-filtros {
+    padding: 24px;
+    margin-bottom: 28px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.14);
+}
+
+#form-filtro {
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+}
+
+.grupo-filtro {
+    width: 100%;
+    max-width: 260px;
+}
+
+.grupo-filtro label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.grupo-filtro input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+}
+
+.grupo-filtro input:focus {
+    border-color: #24449a;
+}
+
+.acoes-filtro {
+    display: flex;
+    gap: 10px;
+}
+
+.tipo-entrada {
+    color: #15803d;
+    font-weight: 600;
+}
+
+.tipo-saida {
+    color: #1d4ed8;
+    font-weight: 600;
+}
+
+@media (max-width: 760px) {
+    #form-filtro {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .grupo-filtro {
+        max-width: none;
+    }
+
+    .acoes-filtro {
+        flex-direction: column;
+    }
+
+    .acoes-filtro button {
+        width: 100%;
+    }
+}
