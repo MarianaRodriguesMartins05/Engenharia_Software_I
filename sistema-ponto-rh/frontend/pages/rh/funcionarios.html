@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Funcionários | Sistema de Ponto RH</title>
+
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/rh.css">
+</head>
+
+<body>
+    <div class="layout-rh">
+        <aside class="menu-lateral">
+            <div class="marca-rh">
+                <h1>Sistema de Ponto RH</h1>
+                <p>Área Administrativa</p>
+            </div>
+
+            <nav class="menu-navegacao">
+                <a
+                    href="./dashboard.html"
+                    class="link-menu"
+                >
+                    Dashboard
+                </a>
+
+                <a
+                    href="./funcionarios.html"
+                    class="link-menu ativo"
+                >
+                    Funcionários
+                </a>
+
+                <a
+                    href="./registros.html"
+                    class="link-menu"
+                >
+                    Registros de Ponto
+                </a>
+
+                <span class="link-menu desabilitado">
+                    Justificativas
+                </span>
+
+                <span class="link-menu desabilitado">
+                    Relatórios
+                </span>
+            </nav>
+
+            <button
+                id="botao-sair"
+                class="botao-sair-menu"
+                type="button"
+            >
+                Sair
+            </button>
+        </aside>
+
+        <main class="conteudo-rh">
+            <header class="cabecalho-pagina">
+                <div class="titulo-pagina">
+                    <h2>Funcionários</h2>
+
+                    <p>
+                        Cadastre e gerencie os funcionários do sistema.
+                    </p>
+                </div>
+
+                <div class="usuario-rh">
+                    <span class="avatar-rh">RH</span>
+                    <span id="nome-usuario">Administrador RH</span>
+                </div>
+            </header>
+
+            <section class="card-formulario">
+                <h2 id="titulo-formulario">
+                    Cadastrar funcionário
+                </h2>
+
+                <form id="form-funcionario">
+                    <input
+                        type="hidden"
+                        id="funcionario-id"
+                    >
+
+                    <div class="grade-formulario">
+                        <div class="grupo-formulario">
+                            <label for="nome">
+                                Nome
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nome"
+                                placeholder="Nome completo"
+                                required
+                            >
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="email">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="funcionario@empresa.com"
+                                required
+                            >
+                        </div>
+
+                        <div
+                            id="grupo-senha"
+                            class="grupo-formulario"
+                        >
+                            <label for="senha">
+                                Senha inicial
+                            </label>
+
+                            <input
+                                type="password"
+                                id="senha"
+                                placeholder="Digite uma senha"
+                            >
+                        </div>
+                    </div>
+
+                    <p
+                        id="mensagem-formulario"
+                        class="mensagem"
+                    ></p>
+
+                    <div class="acoes-formulario">
+                        <button
+                            id="botao-salvar"
+                            class="botao-principal-rh"
+                            type="submit"
+                        >
+                            Cadastrar funcionário
+                        </button>
+
+                        <button
+                            id="botao-cancelar"
+                            class="botao-cancelar"
+                            type="button"
+                            hidden
+                        >
+                            Cancelar edição
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card-listagem">
+                <div class="cabecalho-listagem">
+                    <div>
+                        <h2>Funcionários cadastrados</h2>
+
+                        <p id="quantidade-funcionarios">
+                            0 funcionários
+                        </p>
+                    </div>
+
+                    <button
+                        id="botao-atualizar"
+                        class="botao-atualizar"
+                        type="button"
+                    >
+                        Atualizar lista
+                    </button>
+                </div>
+
+                <div class="tabela-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Perfil</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabela-funcionarios">
+                            <tr>
+                                <td
+                                    colspan="4"
+                                    class="sem-registros"
+                                >
+                                    Carregando funcionários...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/funcionarios.js"></script>
+</body>
+</html>

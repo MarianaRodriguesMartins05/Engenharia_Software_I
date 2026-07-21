@@ -287,3 +287,145 @@ td {
         width: 100%;
     }
 }
+/* Página de funcionários */
+
+.card-formulario,
+.card-listagem {
+    padding: 26px;
+    margin-bottom: 28px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.14);
+}
+
+.card-formulario h2,
+.card-listagem h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.grade-formulario {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.grupo-formulario input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+}
+
+.grupo-formulario input:focus {
+    border-color: #24449a;
+}
+
+.acoes-formulario {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.botao-principal-rh,
+.botao-cancelar,
+.botao-atualizar {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.botao-principal-rh {
+    background-color: #24449a;
+    color: white;
+}
+
+.botao-principal-rh:hover {
+    background-color: #183574;
+}
+
+.botao-principal-rh:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.botao-cancelar {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.botao-atualizar {
+    background-color: #eef2ff;
+    color: #24449a;
+}
+
+.cabecalho-listagem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.cabecalho-listagem h2 {
+    margin-bottom: 4px;
+}
+
+.cabecalho-listagem p {
+    color: #6b7280;
+}
+
+.acoes-tabela {
+    display: flex;
+    gap: 8px;
+}
+
+.botao-editar,
+.botao-excluir {
+    padding: 8px 13px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.botao-editar {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.botao-excluir {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+@media (max-width: 900px) {
+    .grade-formulario {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .cabecalho-listagem {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .acoes-formulario,
+    .acoes-tabela {
+        flex-direction: column;
+    }
+
+    .botao-principal-rh,
+    .botao-cancelar,
+    .botao-atualizar {
+        width: 100%;
+    }
+}
