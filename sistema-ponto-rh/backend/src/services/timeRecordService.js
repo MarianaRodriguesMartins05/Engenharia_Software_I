@@ -33,15 +33,15 @@ module.exports = {
 
 async function listAll(date) {
 
-    let records = timeRecordModel.findAll();
+    let records = await timeRecordModel.findAll();
 
     if (date) {
         records = records.filter(record => record.date === date);
     }
 
-    return records.map(record => {
+    return Promise.all(records.map(async record => {
 
-        const user = userModel.findById(record.userId);
+        const user = await userModel.findById(record.userId);
 
         return {
 
@@ -55,7 +55,7 @@ async function listAll(date) {
 
         };
 
-    });
+    }));
 
 }
 

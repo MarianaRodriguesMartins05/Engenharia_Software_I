@@ -1,0 +1,204 @@
+{
+  "info": {
+    "_postman_id": "7540e368-e73d-4b12-a602-69c10c6c07a3",
+    "name": "Sistema de Ponto RH",
+    "description": "Coleção para testar a API do Sistema de Ponto RH. Execute primeiro o login do RH; o token será salvo automaticamente. Depois, cadastre um funcionário e faça o login dele para testar o registro de ponto.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "if (!pm.collectionVariables.get('filter_date')) {",
+          "    pm.collectionVariables.set('filter_date', new Date().toISOString().slice(0, 10));",
+          "}"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:3000", "type": "string" },
+    { "key": "rh_email", "value": "admin@empresa.com", "type": "string" },
+    { "key": "rh_password", "value": "123456", "type": "string" },
+    { "key": "employee_email", "value": "maria@empresa.com", "type": "string" },
+    { "key": "employee_password", "value": "123456", "type": "string" },
+    { "key": "employee_id", "value": "", "type": "string" },
+    { "key": "rh_token", "value": "", "type": "string" },
+    { "key": "employee_token", "value": "", "type": "string" },
+    { "key": "filter_date", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "00 - Verificação",
+      "item": [
+        {
+          "name": "Status da API",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/", "host": ["{{base_url}}"], "path": [""] },
+            "description": "Confirma que o backend está em execução."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('API online', () => {", "    pm.response.to.have.status(200);", "    pm.expect(pm.response.json().status).to.eql('online');", "});"] } }]
+        }
+      ]
+    },
+    {
+      "name": "01 - Autenticação",
+      "item": [
+        {
+          "name": "Login RH",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{rh_email}}\",\n  \"senha\": \"{{rh_password}}\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/auth/login", "host": ["{{base_url}}"], "path": ["auth", "login"] },
+            "description": "Autentica o usuário RH e salva automaticamente o JWT em rh_token."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Login do RH realizado', () => pm.response.to.have.status(200));", "if (pm.response.code === 200) {", "    pm.collectionVariables.set('rh_token', pm.response.json().token);", "}"] } }]
+        },
+        {
+          "name": "Meu usuário - RH",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{rh_token}}", "type": "string" }] },
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/users/me", "host": ["{{base_url}}"], "path": ["users", "me"] }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Usuário autenticado', () => pm.response.to.have.status(200));"] } }]
+        },
+        {
+          "name": "Login Funcionário",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{employee_email}}\",\n  \"senha\": \"{{employee_password}}\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/auth/login", "host": ["{{base_url}}"], "path": ["auth", "login"] },
+            "description": "Execute após cadastrar o funcionário. Salva automaticamente o JWT em employee_token."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Login do funcionário realizado', () => pm.response.to.have.status(200));", "if (pm.response.code === 200) {", "    const response = pm.response.json();", "    pm.collectionVariables.set('employee_token', response.token);", "    pm.collectionVariables.set('employee_id', String(response.usuario.id));", "}"] } }]
+        }
+      ]
+    },
+    {
+      "name": "02 - Administração RH",
+      "item": [
+        {
+          "name": "Dashboard RH",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{rh_token}}", "type": "string" }] },
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/admin/dashboard", "host": ["{{base_url}}"], "path": ["admin", "dashboard"] }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Dashboard acessível pelo RH', () => pm.response.to.have.status(200));"] } }]
+        },
+        {
+          "name": "Cadastrar Funcionário",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{rh_token}}", "type": "string" }] },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Maria Oliveira\",\n  \"email\": \"{{employee_email}}\",\n  \"senha\": \"{{employee_password}}\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/employees", "host": ["{{base_url}}"], "path": ["employees"] }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Funcionário cadastrado', () => pm.expect(pm.response.code).to.be.oneOf([201, 409]));", "if (pm.response.code === 201) {", "    pm.collectionVariables.set('employee_id', String(pm.response.json().funcionario.id));", "}"] } }]
+        },
+        {
+          "name": "Listar Funcionários",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{rh_token}}", "type": "string" }] },
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/employees", "host": ["{{base_url}}"], "path": ["employees"] }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Lista retornada', () => {", "    pm.response.to.have.status(200);", "    pm.expect(pm.response.json()).to.be.an('array');", "});"] } }]
+        },
+        {
+          "name": "Buscar Funcionário",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{rh_token}}", "type": "string" }] },
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/employees/{{employee_id}}", "host": ["{{base_url}}"], "path": ["employees", "{{employee_id}}"] }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Funcionário encontrado', () => pm.response.to.have.status(200));"] } }]
+        },
+        {
+          "name": "Atualizar Funcionário",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{rh_token}}", "type": "string" }] },
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Maria Oliveira Atualizada\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/employees/{{employee_id}}", "host": ["{{base_url}}"], "path": ["employees", "{{employee_id}}"] }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Funcionário atualizado', () => pm.response.to.have.status(200));"] } }]
+        },
+        {
+          "name": "Excluir Funcionário",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{rh_token}}", "type": "string" }] },
+            "method": "DELETE",
+            "header": [],
+            "url": { "raw": "{{base_url}}/employees/{{employee_id}}", "host": ["{{base_url}}"], "path": ["employees", "{{employee_id}}"] },
+            "description": "Execute por último, pois remove o funcionário usado nos demais testes."
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Funcionário removido', () => pm.response.to.have.status(200));"] } }]
+        }
+      ]
+    },
+    {
+      "name": "03 - Registros de Ponto",
+      "item": [
+        {
+          "name": "Registrar Ponto",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{employee_token}}", "type": "string" }] },
+            "method": "POST",
+            "header": [],
+            "url": { "raw": "{{base_url}}/time-records", "host": ["{{base_url}}"], "path": ["time-records"] }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Ponto registrado', () => pm.response.to.have.status(201));"] } }]
+        },
+        {
+          "name": "Meu Histórico",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{employee_token}}", "type": "string" }] },
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/time-records/history", "host": ["{{base_url}}"], "path": ["time-records", "history"] }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Histórico retornado', () => {", "    pm.response.to.have.status(200);", "    pm.expect(pm.response.json()).to.be.an('array');", "});"] } }]
+        },
+        {
+          "name": "Todos os Registros - RH",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{rh_token}}", "type": "string" }] },
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/time-records/all", "host": ["{{base_url}}"], "path": ["time-records", "all"] }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Registros retornados', () => {", "    pm.response.to.have.status(200);", "    pm.expect(pm.response.json()).to.be.an('array');", "});"] } }]
+        },
+        {
+          "name": "Filtrar Registros por Data - RH",
+          "request": {
+            "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{rh_token}}", "type": "string" }] },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/time-records/all?date={{filter_date}}",
+              "host": ["{{base_url}}"],
+              "path": ["time-records", "all"],
+              "query": [{ "key": "date", "value": "{{filter_date}}", "description": "Formato YYYY-MM-DD" }]
+            }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Filtro executado', () => pm.response.to.have.status(200));"] } }]
+        }
+      ]
+    }
+  ]
+}

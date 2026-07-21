@@ -3,7 +3,7 @@ const jwt = require("../utils/jwt");
 
 async function login(email, senha) {
 
-    const user = userModel.findByEmail(email);
+    const user = await userModel.findByEmail(email);
 
     if (!user) {
         return {

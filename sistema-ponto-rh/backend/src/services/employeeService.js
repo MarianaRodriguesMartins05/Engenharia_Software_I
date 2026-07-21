@@ -16,7 +16,7 @@ async function createEmployee(data) {
 
     }
 
-    const exists = userModel.findByEmail(email);
+    const exists = await userModel.findByEmail(email);
 
     if (exists) {
 
@@ -30,7 +30,7 @@ async function createEmployee(data) {
 
     }
 
-    const employee = userModel.create({
+    const employee = await userModel.create({
 
         nome,
 
@@ -56,7 +56,7 @@ async function createEmployee(data) {
 
 async function listEmployees() {
 
-    const users = userModel.findAll();
+    const users = await userModel.findAll();
 
     return users.map(user => ({
         id: user.id,
@@ -69,7 +69,7 @@ async function listEmployees() {
 
 async function getEmployee(id) {
 
-    const user = userModel.findById(id);
+    const user = await userModel.findById(id);
 
     if (!user) {
 
@@ -102,7 +102,7 @@ async function getEmployee(id) {
 
 async function updateEmployee(id, data) {
 
-    const updated = userModel.update(id, data);
+    const updated = await userModel.update(id, data);
 
     if (!updated) {
 
@@ -140,7 +140,7 @@ async function updateEmployee(id, data) {
 
 async function deleteEmployee(id) {
 
-    const deleted = userModel.remove(id);
+    const deleted = await userModel.remove(id);
 
     if (!deleted) {
 

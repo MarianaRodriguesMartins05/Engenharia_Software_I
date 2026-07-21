@@ -1,88 +1,76 @@
-const users = [
-    {
-        id: 1,
-        nome: "Administrador",
-        email: "admin@empresa.com",
-        senha: "123456",
-        perfil: "RH"
-    },
-    {
-        id: 2,
-        nome: "João Silva",
-        email: "joao@empresa.com",
-        senha: "123456",
-        perfil: "FUNCIONARIO"
-    }
-];
+const database = require("../database");
 
-function findAll() {
+async function findAll() {
+    const [users] = await database.execute(
+        "SELECT id, nome, email, perfil FROM users"
+    );
+
     return users;
 }
 
-function findById(id) {
-    console.log("ID recebido:", id);
-    console.log("Usuários:", users);
-    return users.find(user => user.id === Number(id));
+async function findById(id) {
+    const [users] = await database.execute(
+        "SELECT id, nome, email, senha, perfil FROM users WHERE id = ?",
+        [id]
+    );
+
+    return users[0] || null;
 }
 
-function findByEmail(email) {
-    return users.find(user => user.email === email);
+async function findByEmail(email) {
+    const [users] = await database.execute(
+        "SELECT id, nome, email, senha, perfil FROM users WHERE email = ?",
+        [email]
+    );
+
+    return users[0] || null;
 }
 
-function create(user) {
+async function create(user) {
+    const { nome, email, senha, perfil } = user;
 
-    const novoUsuario = {
+    const [result] = await database.execute(
+        "INSERT INTO users (nome, email, senha, perfil) VALUES (?, ?, ?, ?)",
+        [nome, email, senha, perfil]
+    );
 
-        id: users.length + 1,
-
-        ...user
-
-    };
-
-    users.push(novoUsuario);
-
-    return novoUsuario;
-
+    return findById(result.insertId);
 }
 
-function update(id, data) {
-
-    const user = users.find(user => user.id === Number(id));
+async function update(id, data) {
+    const user = await findById(id);
 
     if (!user) {
         return null;
     }
 
-    Object.assign(user, data);
+    const nome = data.nome ?? user.nome;
+    const email = data.email ?? user.email;
+    const senha = data.senha ?? user.senha;
+    const perfil = data.perfil ?? user.perfil;
 
-    return user;
+    await database.execute(
+        "UPDATE users SET nome = ?, email = ?, senha = ?, perfil = ? WHERE id = ?",
+        [nome, email, senha, perfil, id]
+    );
+
+    return findById(id);
 }
 
-function remove(id) {
+async function remove(id) {
+    const [result] = await database.execute(
+        "DELETE FROM users WHERE id = ?",
+        [id]
+    );
 
-    const index = users.findIndex(user => user.id === Number(id));
-
-    if (index === -1) {
-        return false;
-    }
-
-    users.splice(index, 1);
-
-    return true;
+    return result.affectedRows > 0;
 }
 
 module.exports = {
-
     findAll,
-
     findById,
-
     findByEmail,
-
     create,
-
     update,
-
     remove
-
 };
