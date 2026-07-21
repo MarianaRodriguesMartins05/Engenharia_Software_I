@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login | Sistema de Ponto RH</title>
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <main class="pagina-login">
+        <section class="card-login">
+            <div class="cabecalho-login">
+                <h1>Sistema de Ponto</h1>
+                <p>Entre com seus dados para acessar o sistema.</p>
+            </div>
+
+            <form id="form-login">
+                <div class="grupo-campo">
+                    <label for="email">E-mail</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Digite seu e-mail"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="senha">Senha</label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <p id="mensagem-login" class="mensagem"></p>
+
+                <button id="botao-login" type="submit">
+                    Entrar
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="./js/api.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>
