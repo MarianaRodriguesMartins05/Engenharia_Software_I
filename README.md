@@ -105,6 +105,141 @@ Ajustar layout e responsividade da página [Daniel]
 
 ---
 
+## Versão Revisada do Backlog da Sprint
+
+Esta versão revisada apresenta as histórias e as tarefas que foram efetivamente realizadas durante o desenvolvimento do Sistema de Ponto para RH. Algumas tarefas inicialmente planejadas foram reorganizadas e detalhadas de acordo com as necessidades identificadas durante a implementação e a integração entre o frontend, o backend e o banco de dados.
+
+### História 1 — Autenticação dos usuários
+
+**Como funcionário ou administrador do RH, eu gostaria de realizar login no sistema para acessar as funcionalidades correspondentes ao meu perfil.**
+
+#### Tarefas realizadas e responsáveis
+
+- Criar a estrutura inicial do backend utilizando Node.js e Express.js [Guilherme]
+- Configurar a conexão da aplicação com o banco de dados MySQL [Mariana]
+- Criar e configurar a tabela de usuários [Mariana]
+- Criar usuários iniciais para os perfis de RH e funcionário [Mariana]
+- Implementar a rota `POST /auth/login` [Guilherme]
+- Implementar autenticação utilizando JSON Web Token — JWT [Guilherme]
+- Criar middleware para verificar a autenticação do usuário [Guilherme]
+- Criar middleware para controlar o acesso de acordo com o perfil do usuário [Guilherme]
+- Implementar a rota `GET /users/me` para consultar o usuário autenticado [Guilherme]
+- Desenvolver e estilizar a tela de login [Daniel]
+- Integrar a tela de login com a API [Daniel e Guilherme]
+- Redirecionar o usuário para o painel correspondente ao seu perfil [Daniel]
+- Realizar testes de login com os perfis de RH e funcionário [Mariana e Guilherme]
+
+**Status:** Concluída.
+
+---
+
+### História 2 — Registro e consulta do ponto pelo funcionário
+
+**Como funcionário, eu gostaria de registrar meus horários de entrada e saída e consultar meu histórico de pontos.**
+
+#### Tarefas realizadas e responsáveis
+
+- Criar a estrutura de armazenamento dos registros de ponto [Mariana]
+- Relacionar os registros de ponto aos usuários cadastrados [Mariana]
+- Implementar a rota `POST /time-records` para registrar um novo ponto [Guilherme]
+- Registrar automaticamente a data e o horário do ponto [Guilherme]
+- Validar se o usuário está autenticado antes de registrar o ponto [Guilherme]
+- Implementar a rota `GET /time-records/history` [Guilherme]
+- Fazer com que cada funcionário visualize apenas seus próprios registros [Guilherme]
+- Desenvolver o painel do funcionário [Daniel]
+- Criar o botão para registrar o ponto [Daniel]
+- Criar a tela de histórico de pontos do funcionário [Daniel]
+- Integrar o painel e o histórico do funcionário com a API [Daniel e Guilherme]
+- Exibir mensagens de confirmação e de erro durante o registro [Daniel]
+- Testar o registro de entrada, saída e a consulta do histórico [Mariana, Guilherme e Daniel]
+
+**Status:** Concluída.
+
+---
+
+### História 3 — Acesso ao painel administrativo do RH
+
+**Como administrador do RH, eu gostaria de acessar uma área administrativa exclusiva para gerenciar os funcionários e os registros de ponto.**
+
+#### Tarefas realizadas e responsáveis
+
+- Implementar a rota `GET /admin/dashboard` [Guilherme]
+- Restringir o acesso ao painel administrativo aos usuários com perfil de RH [Guilherme]
+- Validar tentativas de acesso realizadas por funcionários [Guilherme]
+- Desenvolver a interface principal do painel do RH [Daniel]
+- Criar a navegação entre as funcionalidades administrativas [Daniel]
+- Integrar o painel administrativo com os dados do usuário autenticado [Daniel e Guilherme]
+- Testar o acesso ao painel utilizando os dois perfis do sistema [Mariana e Guilherme]
+
+**Status:** Concluída.
+
+---
+
+### História 4 — Gerenciamento de funcionários
+
+**Como administrador do RH, eu gostaria de cadastrar, visualizar, editar e remover funcionários para manter os colaboradores do sistema atualizados.**
+
+#### Tarefas realizadas e responsáveis
+
+- Definir os campos e as regras de armazenamento dos funcionários [Mariana]
+- Implementar a rota `POST /employees` para cadastrar funcionários [Guilherme]
+- Implementar a rota `GET /employees` para listar funcionários [Guilherme]
+- Implementar a rota `GET /employees/:id` para buscar um funcionário [Guilherme]
+- Implementar a rota `PUT /employees/:id` para atualizar um funcionário [Guilherme]
+- Implementar a rota `DELETE /employees/:id` para remover um funcionário [Guilherme]
+- Validar os dados enviados no cadastro e na edição [Guilherme]
+- Validar e impedir o cadastro de e-mails duplicados [Guilherme e Mariana]
+- Garantir que apenas usuários do RH utilizem as rotas de gerenciamento [Guilherme]
+- Desenvolver o formulário de cadastro de funcionários [Daniel]
+- Desenvolver a listagem dos funcionários cadastrados [Daniel]
+- Implementar as ações de edição e exclusão na interface [Daniel]
+- Integrar as telas de gerenciamento de funcionários com a API [Daniel e Guilherme]
+- Realizar testes das operações de cadastro, consulta, edição e remoção [Mariana, Guilherme e Daniel]
+
+**Status:** Concluída.
+
+---
+
+### História 5 — Consulta dos registros de ponto pelo RH
+
+**Como administrador do RH, eu gostaria de visualizar os registros de ponto dos funcionários e filtrá-los por data para acompanhar a jornada de trabalho.**
+
+#### Tarefas realizadas e responsáveis
+
+- Criar a consulta dos registros de ponto relacionados aos funcionários [Mariana]
+- Implementar a rota `GET /time-records/all` [Guilherme]
+- Restringir a consulta de todos os registros ao perfil de RH [Guilherme]
+- Adicionar o filtro de registros por data utilizando o parâmetro `date` [Guilherme]
+- Retornar o nome do funcionário junto ao registro de ponto [Guilherme e Mariana]
+- Desenvolver a página de visualização dos registros de ponto [Daniel]
+- Criar o campo de filtro por data [Daniel]
+- Exibir os registros organizados por funcionário, data e horário [Daniel]
+- Integrar a página de registros com a API [Daniel e Guilherme]
+- Ajustar o layout e a responsividade da página [Daniel]
+- Testar a listagem completa e a consulta com filtro por data [Mariana, Guilherme e Daniel]
+
+**Status:** Concluída.
+
+---
+
+### Atividades complementares realizadas durante a Sprint
+
+Além das tarefas diretamente relacionadas às histórias, também foram realizadas as seguintes atividades:
+
+- Organização do projeto em pastas separadas para frontend e backend [Equipe]
+- Configuração das dependências do backend [Guilherme]
+- Configuração das variáveis necessárias para conexão com o banco de dados [Mariana e Guilherme]
+- Criação da documentação das rotas da API [Guilherme]
+- Criação de orientações para integração entre frontend e backend [Guilherme e Daniel]
+- Criação de orientações para integração e configuração do banco de dados [Mariana]
+- Criação de uma coleção de testes para as rotas da API [Guilherme]
+- Realização de testes de autenticação, autorização e validação de dados [Equipe]
+- Correção de problemas encontrados durante a integração entre frontend, backend e banco de dados [Equipe]
+- Ajustes finais nas interfaces e na navegação do sistema [Daniel]
+- Atualização da documentação e dos diagramas do projeto [Equipe]
+
+---
+
 ## Diagramas UML
 
 ### 1. Diagramas de Casos de Uso
